@@ -1,11 +1,13 @@
 (ns demo.core
   (:require
     [reagent.core :as r]
-    [re-frame.core :as rf]))
+    [re-frame.core :as rf]
+    ["semantic-ui-react" :refer [Image]]))
 
 (defn page []
   [:div
-   [:p "Hola mundo"]])
+   [:p "Hola mundo"]
+   [:> Image {:src "/img/warning_clojure.png"}]])
 
 ;; -------------------------
 ;; Initialize app
