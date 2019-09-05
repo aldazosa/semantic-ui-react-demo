@@ -24,6 +24,9 @@ To start a web server for the application, run:
 
     lein shadow compile app
 
+### To launch shadow-cljs for development ###
+
+    lein shadow watch app
 
 ### To launch everything from a repl ###
 
@@ -41,3 +44,7 @@ To start a web server for the application, run:
 ### To quit the cljs repl ###
 
     :cljs/quit
+
+### So, to test everything from the cli ###
+
+Run `lein run` in one terminal, and after the http server is up run `lein shadow watch app` in another.
