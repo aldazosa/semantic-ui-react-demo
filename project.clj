@@ -91,7 +91,8 @@
      :output-to "target/test/test.js"
      :autorun true}}}
 
-  :npm-deps [[shadow-cljs "2.8.39"]
+  :npm-deps [[semantic-ui-react "0.88.0"]
+             [shadow-cljs "2.8.52"]
              [create-react-class "15.6.3"]
              [react "16.8.6"]
              [react-dom "16.8.6"]]
