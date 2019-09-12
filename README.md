@@ -48,3 +48,30 @@ To start a web server for the application, run:
 ### So, to test everything from the cli ###
 
 Run `lein run` in one terminal, and after the http server is up run `lein shadow watch app` in another.
+
+
+### Testing the database ###
+
+From the `user` namespace run:
+
+```clojure
+(reset-db) ; recreate the whole db
+
+(demo.db.core/create-user! {:id         1
+                            :first_name "Bruce"
+                            :last_name  "Wayne"
+                            :email      "bruce@waynecorp.com"
+                            :pass       "iamthenight"})
+;; => 1
+
+(demo.db.core/get-user {:id 1})
+;; => {:id "1",
+;;     :first_name "Bruce"
+;;     :last_name "Wayne"
+;;     :email "bruce@waynecorp.com"
+;;     :admin nil,
+;;     :last_login nil,
+;;     :is_active nil,
+;;     :pass "iamthenight"}
+
+```
