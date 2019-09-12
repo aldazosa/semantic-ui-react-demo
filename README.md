@@ -52,7 +52,7 @@ Run `lein run` in one terminal, and after the http server is up run `lein shadow
 
 ### Testing the database ###
 
-From the `user` namespace run:
+After starting the backend (e.g. by runnning `(go)`), in the `user` namespace run:
 
 ```clojure
 (reset-db) ; recreate the whole db
