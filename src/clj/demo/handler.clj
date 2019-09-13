@@ -3,6 +3,8 @@
     [demo.middleware :as middleware]
     [demo.layout :refer [error-page]]
     [demo.routes.home :refer [home-routes]]
+    [demo.routes.services :refer [service-routes]]
+    [reitit.swagger-ui :as swagger-ui]
     [reitit.ring :as ring]
     [ring.middleware.content-type :refer [wrap-content-type]]
     [ring.middleware.webjars :refer [wrap-webjars]]
@@ -17,8 +19,13 @@
   :start
   (ring/ring-handler
     (ring/router
-      [(home-routes)])
+      [(home-routes)
+       (service-routes)])
     (ring/routes
+      (swagger-ui/create-swagger-ui-handler
+        {:path   "/swagger-ui"
+         :url    "/api/swagger.json"
+         :config {:validator-url nil}})
       (ring/create-resource-handler
         {:path "/"})
       (wrap-content-type

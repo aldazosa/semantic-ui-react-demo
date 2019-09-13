@@ -47,7 +47,8 @@
 (defn reset-db
   "Resets database."
   []
-  (migrations/migrate ["reset"] (select-keys env [:database-url])))
+  (migrations/migrate ["reset"]
+                      (select-keys env [:database-url])))
 
 (defn migrate
   "Migrates database up for all outstanding migrations."

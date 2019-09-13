@@ -75,3 +75,17 @@ After starting the backend (e.g. by runnning `(go)`), in the `user` namespace ru
 ;;     :pass "iamthenight"}
 
 ```
+
+#### Via rest services ####
+
+The same can be accomplished via two rest end-points, for example using `curl` the user can be created with:
+
+```
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{"id": "1", "first_name": "Bruce", "last_name": "Wayne", "email": "bruce@waynecorp.com", "pass": "iamthenight"}' 'http://localhost:3000/api/user'
+```
+
+And recovered with:
+
+```
+curl -X GET --header 'Accept: application/json' 'http://localhost:3000/api/user?user-id=1'
+```
